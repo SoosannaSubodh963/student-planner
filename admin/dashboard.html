@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Dashboard · Student Task Planner</title>
+<meta name="description" content="Student Task Planner – Admin Dashboard">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8E%93%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+<body data-role="admin" data-page="dashboard" data-base="../" data-title="Admin Dashboard" data-sub="Overview of all student activity">
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar" aria-label="Sidebar"></aside>
+  <div class="main-wrap">
+    <header class="topbar" id="topbar"></header>
+    <main class="content" id="content">
+
+      <section class="banner admin-banner mb-20"><div><h2 id="greet">Welcome</h2><p id="greetSub"></p></div><div class="flex gap-12 wrap" style="position:relative;z-index:1"><a class="btn btn-white" href="announcements.html"><i class="fa-solid fa-bullhorn"></i> Announcements</a><a class="btn btn-light" href="reports.html"><i class="fa-solid fa-chart-line"></i> Reports</a></div></section>
+      <div class="stat-grid six" id="stats"></div>
+      <div class="grid row-2 mb-20">
+        <div class="card"><div class="card-header"><div class="card-title"><i class="fa-solid fa-user-plus"></i> Student registration overview</div><span class="card-sub">Last 6 months</span></div><div class="chart-box"><canvas id="regChart"></canvas></div></div>
+        <div class="card"><div class="card-header"><div class="card-title"><i class="fa-solid fa-list-check"></i> Task completion statistics</div></div><div class="chart-box"><canvas id="taskChart"></canvas></div></div>
+      </div>
+      <div class="grid row-2 mb-20">
+        <div class="card"><div class="card-header"><div class="card-title"><i class="fa-solid fa-building-columns"></i> Department-wise students</div></div><div class="chart-box"><canvas id="deptChart"></canvas></div></div>
+        <div class="card"><div class="card-header"><div class="card-title"><i class="fa-solid fa-file-circle-check"></i> Assignment submissions</div></div><div class="chart-box"><canvas id="asgChart"></canvas></div></div>
+      </div>
+      <div class="card mb-20"><div class="card-header"><div class="card-title"><i class="fa-solid fa-chart-line"></i> Overall productivity</div><span class="card-sub">Tasks created vs completed, last 8 weeks</span></div><div class="chart-box tall"><canvas id="prodChart"></canvas></div></div>
+      <div class="grid row-3">
+        <div class="card"><div class="card-header"><div class="card-title"><i class="fa-solid fa-user-graduate"></i> Recent registrations</div><a class="btn btn-ghost btn-sm" href="students.html">All</a></div><div id="recentStudents"></div></div>
+        <div class="card"><div class="card-header"><div class="card-title"><i class="fa-solid fa-plus-circle"></i> Recently created tasks</div><a class="btn btn-ghost btn-sm" href="tasks.html">All</a></div><div id="recentTasks"></div></div>
+        <div class="card"><div class="card-header"><div class="card-title"><i class="fa-solid fa-hourglass-half"></i> Students with pending tasks</div></div><div id="pendingStudents"></div></div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="../js/storage.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/admin-dashboard.js"></script>
+</body>
+</html>

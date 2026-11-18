@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reports & Analytics · Student Task Planner</title>
+<meta name="description" content="Student Task Planner – Reports & Analytics">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8E%93%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+<body data-role="admin" data-page="reports" data-base="../" data-title="Reports & Analytics" data-sub="Insights from real stored data">
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar" aria-label="Sidebar"></aside>
+  <div class="main-wrap">
+    <header class="topbar" id="topbar"></header>
+    <main class="content" id="content">
+
+      <div class="card mb-20"><div class="card-header"><div class="card-title"><i class="fa-solid fa-filter"></i> Filters</div><button class="btn btn-ghost btn-sm" id="resetFilters" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button></div>
+        <div class="filter-panel">
+          <div class="field"><label for="fFrom">Created from</label><input type="date" id="fFrom"></div>
+          <div class="field"><label for="fTo">Created to</label><input type="date" id="fTo"></div>
+          <div class="field"><label for="fDept">Department</label><select id="fDept"></select></div>
+          <div class="field"><label for="fStudent">Student</label><select id="fStudent"></select></div>
+        </div></div>
+      <div class="stat-grid six" id="stats"></div>
+      <div class="grid row-2 mb-20">
+        <div class="card"><div class="card-header"><div class="card-title"><i class="fa-solid fa-chart-pie"></i> Task status</div></div><div class="chart-box"><canvas id="statusChart"></canvas></div></div>
+        <div class="card"><div class="card-header"><div class="card-title"><i class="fa-solid fa-building-columns"></i> Department-wise tasks</div></div><div class="chart-box"><canvas id="deptChart"></canvas></div></div>
+      </div>
+      <div class="grid row-2 mb-20">
+        <div class="card"><div class="card-header"><div class="card-title"><i class="fa-solid fa-ranking-star"></i> Student-wise productivity</div></div><div class="chart-box"><canvas id="studentChart"></canvas></div></div>
+        <div class="card"><div class="card-header"><div class="card-title"><i class="fa-solid fa-timeline"></i> Tasks created over time</div></div><div class="chart-box"><canvas id="timeChart"></canvas></div></div>
+      </div>
+      <div class="card mb-20"><div class="card-header"><div class="card-title"><i class="fa-solid fa-building"></i> Department-wise statistics</div><button class="btn btn-secondary btn-sm" id="expDept" type="button"><i class="fa-solid fa-file-csv"></i> Export CSV</button></div>
+        <div class="table-wrap"><table class="data" style="min-width:640px"><thead><tr><th>Department</th><th>Students</th><th>Tasks</th><th>Completed</th><th>Overdue</th><th>Completion</th><th>Assignment rate</th></tr></thead><tbody id="deptRows"></tbody></table></div></div>
+      <div class="card"><div class="card-header"><div class="card-title"><i class="fa-solid fa-user-check"></i> Student-wise productivity</div><div class="flex gap-8 wrap"><button class="btn btn-secondary btn-sm" id="expStudents" type="button"><i class="fa-solid fa-file-csv"></i> Export students CSV</button><button class="btn btn-primary btn-sm" id="expTasks" type="button"><i class="fa-solid fa-file-csv"></i> Export tasks CSV</button></div></div>
+        <div class="table-wrap"><table class="data"><thead><tr><th>Student</th><th>Department</th><th>Tasks</th><th>Completed</th><th>Overdue</th><th>Task completion</th><th>Assignments</th></tr></thead><tbody id="studentRows"></tbody></table></div></div>
+    </main>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="../js/storage.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/reports.js"></script>
+</body>
+</html>

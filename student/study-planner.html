@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Study Planner · Student Task Planner</title>
+<meta name="description" content="Student Task Planner – Study Planner">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8E%93%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/student.css">
+</head>
+<body data-role="student" data-page="study-planner" data-base="../" data-title="Study Planner" data-sub="Schedule focused study sessions">
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar" aria-label="Sidebar"></aside>
+  <div class="main-wrap">
+    <header class="topbar" id="topbar"></header>
+    <main class="content" id="content">
+
+      <div class="stat-grid" id="stats"></div>
+      <div class="grid row-main mb-20">
+        <div class="card"><div class="card-header"><div class="card-title"><i class="fa-solid fa-sun"></i> Today's study schedule</div><button class="btn btn-primary btn-sm" id="addBtn" type="button"><i class="fa-solid fa-plus"></i> Add session</button></div><div id="todayList"></div></div>
+        <div class="card"><div class="card-header"><div class="card-title"><i class="fa-solid fa-forward"></i> Upcoming sessions</div></div><div id="upcomingList"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><div><div class="card-title"><i class="fa-solid fa-table-cells"></i> Weekly study schedule</div><div class="card-sub" id="weekLabel"></div></div>
+          <div class="flex gap-8"><button class="icon-btn sm" id="prevWeek" type="button" aria-label="Previous week"><i class="fa-solid fa-chevron-left"></i></button><button class="btn btn-secondary btn-sm" id="thisWeek" type="button">This week</button><button class="icon-btn sm" id="nextWeek" type="button" aria-label="Next week"><i class="fa-solid fa-chevron-right"></i></button></div></div>
+        <div class="week-grid" id="weekGrid"></div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="../js/storage.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/study-planner.js"></script>
+</body>
+</html>

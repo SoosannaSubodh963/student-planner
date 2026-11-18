@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Register · Student Task Planner</title>
+<meta name="description" content="Student Task Planner – organise assignments, deadlines and study sessions in one place.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8E%93%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="public" data-page="register" data-base="">
+<div class="auth-page">
+  <aside class="auth-side">
+    <a class="lp-brand" style="color:#fff" href="index.html"><span class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></span> Task Planner</a>
+    <div><h2>Join thousands of organised students.</h2><p>Create your free student account and start planning in under a minute.</p>
+      <ul class="auth-points"><li><i class="fa-solid fa-bolt"></i> Instant access to your dashboard</li><li><i class="fa-solid fa-bullhorn"></i> Receive announcements for your department</li><li><i class="fa-solid fa-lock"></i> Your records stay private to you</li></ul></div>
+    <small style="color:#9aa9dd">&copy; 2026 Student Task Planner</small>
+  </aside>
+  <main class="auth-main"><div class="auth-card">
+    <a class="back-home" href="index.html"><i class="fa-solid fa-arrow-left"></i> Back to home</a>
+    <h1>Create your account</h1><p class="sub">Fill in your details to get started.</p>
+    <form id="registerForm" novalidate>
+      <div class="form-grid">
+        <div class="field full"><label for="r_name">Full name<span class="req">*</span></label><input id="r_name" type="text" name="name" placeholder="e.g. Priya Sharma" autocomplete="name" maxlength="60"><small class="field-error" data-for="name"></small></div>
+        <div class="field"><label for="r_roll">Student ID / Roll number<span class="req">*</span></label><input id="r_roll" type="text" name="rollNo" placeholder="e.g. CS2024015" maxlength="20" autocomplete="off"><small class="field-error" data-for="rollNo"></small></div>
+        <div class="field"><label for="r_email">Email<span class="req">*</span></label><input id="r_email" type="email" name="email" placeholder="you@college.edu" autocomplete="email"><small class="field-error" data-for="email"></small></div>
+        <div class="field"><label for="r_dept">Department<span class="req">*</span></label><select id="r_dept" name="department"><option value="">Select department</option></select><small class="field-error" data-for="department"></small></div>
+        <div class="field"><label for="r_sem">Semester<span class="req">*</span></label><select id="r_sem" name="semester"><option value="">Select semester</option></select><small class="field-error" data-for="semester"></small></div>
+        <div class="field full"><label for="r_pw">Password<span class="req">*</span></label><div class="pw-wrap"><input id="r_pw" type="password" name="password" placeholder="Create a password" autocomplete="new-password"><button class="pw-toggle" type="button" aria-label="Show password"><i class="fa-solid fa-eye"></i></button></div><div class="strength" id="strength"><i></i><i></i><i></i><i></i></div><small class="field-hint" id="strengthText">Use 8+ characters with upper, lower case and a number.</small><small class="field-error" data-for="password"></small></div>
+        <div class="field full"><label for="r_cpw">Confirm password<span class="req">*</span></label><div class="pw-wrap"><input id="r_cpw" type="password" name="confirmPassword" placeholder="Re-enter your password" autocomplete="new-password"><button class="pw-toggle" type="button" aria-label="Show password"><i class="fa-solid fa-eye"></i></button></div><small class="field-error" data-for="confirmPassword"></small></div>
+      </div>
+      <button class="btn btn-primary btn-block btn-lg" style="margin-top:22px" type="submit"><i class="fa-solid fa-user-plus"></i> Create account</button>
+    </form>
+    <p class="auth-alt">Already registered? <a href="login.html">Log in</a></p>
+    <p class="sec-note"><i class="fa-solid fa-circle-info"></i> Demo app: do not use a real password. LocalStorage is not secure.</p>
+  </div></main>
+</div>
+<script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/common.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard · Student Task Planner</title>
+<meta name="description" content="Student Task Planner – Dashboard">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8E%93%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/student.css">
+</head>
+<body data-role="student" data-page="dashboard" data-base="../" data-title="Dashboard">
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar" aria-label="Sidebar"></aside>
+  <div class="main-wrap">
+    <header class="topbar" id="topbar"></header>
+    <main class="content" id="content">
+
+      <section class="banner mb-20">
+        <div><h2 id="greet">Welcome</h2><p id="greetSub"></p></div>
+        <div class="flex gap-12 wrap" style="position:relative;z-index:1">
+          <button class="btn btn-white" id="addTaskBtn" type="button"><i class="fa-solid fa-plus"></i> Add Task</button>
+          <a class="btn btn-light" href="study-planner.html"><i class="fa-solid fa-book-open-reader"></i> Plan Study</a>
+        </div>
+      </section>
+      <div class="stat-grid" id="stats"></div>
+      <div class="grid row-main mb-20">
+        <div class="card"><div class="card-header"><div class="card-title"><i class="fa-solid fa-calendar-week"></i> Weekly task overview</div><span class="card-sub" id="weekRange"></span></div><div class="week-strip" id="weekStrip"></div></div>
+        <div class="card"><div class="card-header"><div class="card-title"><i class="fa-solid fa-bullseye"></i> Task completion</div></div><div class="progress-wrap"><div class="ring" id="ring"><span id="ringText">0%</span></div><div class="legend-list" id="legend"></div></div></div>
+      </div>
+      <div class="grid row-3 mb-20">
+        <div class="card"><div class="card-header"><div class="card-title"><i class="fa-solid fa-chart-column"></i> Weekly productivity</div></div><div class="chart-box"><canvas id="weeklyChart"></canvas></div></div>
+        <div class="card"><div class="card-header"><div class="card-title"><i class="fa-solid fa-chart-pie"></i> Priority distribution</div></div><div class="chart-box"><canvas id="priorityChart"></canvas></div></div>
+        <div class="card"><div class="card-header"><div class="card-title"><i class="fa-solid fa-clock"></i> Study time overview</div></div><div class="chart-box"><canvas id="studyChart"></canvas></div></div>
+      </div>
+      <div class="grid row-2">
+        <div class="card"><div class="card-header"><div class="card-title"><i class="fa-solid fa-hourglass-half"></i> Upcoming deadlines</div><a class="btn btn-ghost btn-sm" href="tasks.html">View all</a></div><div class="list" id="upcoming"></div></div>
+        <div class="card"><div class="card-header"><div class="card-title"><i class="fa-solid fa-clock-rotate-left"></i> Recent activities</div></div><div class="list" id="recent"></div></div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="../js/storage.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/student-dashboard.js"></script>
+</body>
+</html>

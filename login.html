@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login · Student Task Planner</title>
+<meta name="description" content="Student Task Planner – organise assignments, deadlines and study sessions in one place.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8E%93%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="public" data-page="login" data-base="">
+<div class="auth-page">
+  <aside class="auth-side">
+    <a class="lp-brand" style="color:#fff" href="index.html"><span class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></span> Task Planner</a>
+    <div><h2>Your semester, beautifully organised.</h2><p>Log in to see your tasks, deadlines, study sessions and announcements in one place.</p>
+      <ul class="auth-points"><li><i class="fa-solid fa-list-check"></i> Track tasks and assignments</li><li><i class="fa-solid fa-calendar-days"></i> Never miss a deadline</li><li><i class="fa-solid fa-chart-pie"></i> Watch your productivity grow</li></ul></div>
+    <small style="color:#9aa9dd">&copy; 2026 Student Task Planner</small>
+  </aside>
+  <main class="auth-main"><div class="auth-card">
+    <a class="back-home" href="index.html"><i class="fa-solid fa-arrow-left"></i> Back to home</a>
+    <h1 id="title">Welcome back</h1><p class="sub" id="subtitle">Log in to continue planning your studies.</p>
+    <div class="role-tabs" role="tablist"><button type="button" class="role-tab active" data-role="student" role="tab" aria-selected="true"><i class="fa-solid fa-user-graduate"></i> Student</button><button type="button" class="role-tab" data-role="admin" role="tab" aria-selected="false"><i class="fa-solid fa-user-shield"></i> Admin</button></div>
+    <form id="studentForm" novalidate>
+      <div class="form-alert" role="alert"></div>
+      <div class="field"><label for="s_email">Email</label><input id="s_email" type="email" name="email" placeholder="you@college.edu" autocomplete="username"></div>
+      <div class="field" style="margin-top:16px"><label for="s_pw">Password</label><div class="pw-wrap"><input id="s_pw" type="password" name="password" placeholder="Your password" autocomplete="current-password"><button class="pw-toggle" type="button" aria-label="Show password"><i class="fa-solid fa-eye"></i></button></div></div>
+      <button class="btn btn-primary btn-block btn-lg" style="margin-top:22px" type="submit"><i class="fa-solid fa-right-to-bracket"></i> Log in as student</button>
+    </form>
+    <form id="adminForm" class="hidden" novalidate>
+      <div class="form-alert" role="alert"></div>
+      <div class="field"><label for="a_user">Username</label><input id="a_user" type="text" name="username" placeholder="admin" autocomplete="username"></div>
+      <div class="field" style="margin-top:16px"><label for="a_pw">Password</label><div class="pw-wrap"><input id="a_pw" type="password" name="password" placeholder="Admin password" autocomplete="current-password"><button class="pw-toggle" type="button" aria-label="Show password"><i class="fa-solid fa-eye"></i></button></div></div>
+      <button class="btn btn-primary btn-block btn-lg" style="margin-top:22px" type="submit"><i class="fa-solid fa-shield-halved"></i> Log in as admin</button>
+    </form>
+    <div class="demo-box" id="demoStudent"><b>Demo student account</b>Email <code>aisha@student.edu</code> · Password <code>Student@123</code><br><button type="button" data-fill="student" data-email="aisha@student.edu">Fill demo credentials</button></div>
+    <div class="demo-box hidden" id="demoAdmin"><b>Demo admin account</b>Username <code>admin</code> · Password <code>Admin@123</code><br><button type="button" data-fill="admin">Fill demo credentials</button></div>
+    <p class="auth-alt">New student? <a href="register.html">Create an account</a></p>
+    <p class="sec-note"><i class="fa-solid fa-circle-info"></i> Demo app: LocalStorage login is for demonstration only and is not secure for real use.</p>
+  </div></main>
+</div>
+<script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/common.js"></script>
+</body>
+</html>

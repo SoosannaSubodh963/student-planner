@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manage Assignments · Student Task Planner</title>
+<meta name="description" content="Student Task Planner – Manage Assignments">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8E%93%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+<body data-role="admin" data-page="assignments" data-base="../" data-title="Manage Assignments" data-sub="Track assignment submissions across students">
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar" aria-label="Sidebar"></aside>
+  <div class="main-wrap">
+    <header class="topbar" id="topbar"></header>
+    <main class="content" id="content">
+
+      <div class="stat-grid" id="stats"></div>
+      <div class="grid row-main mb-20">
+        <div class="card"><div class="card-header"><div class="card-title"><i class="fa-solid fa-percent"></i> Completion statistics</div></div><div id="completion"></div></div>
+        <div class="card"><div class="card-header"><div class="card-title"><i class="fa-solid fa-chart-pie"></i> Status split</div></div><div class="chart-box short"><canvas id="asgSplit"></canvas></div></div>
+      </div>
+      <div class="toolbar">
+        <div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input type="search" id="q" placeholder="Search assignments…" aria-label="Search assignments…"></div>
+        <select id="fStudent" aria-label="Filter by student"></select>
+        <select id="fSubject" aria-label="Filter by subject"></select>
+        <select id="fStatus" aria-label="Filter by status"><option value="">All statuses</option><option value="Pending">Pending (not yet due)</option><option>Not Started</option><option>In Progress</option><option>Submitted</option><option>Overdue</option></select>
+        <button class="btn btn-ghost" id="clearBtn" type="button"><i class="fa-solid fa-filter-circle-xmark"></i> Clear</button>
+      </div>
+      <div class="table-wrap"><table class="data"><thead><tr><th>Assignment</th><th>Student</th><th>Subject</th><th>Deadline</th><th>Progress</th><th>Status</th><th>Actions</th></tr></thead><tbody id="rows"></tbody></table></div>
+      <div id="emptyBox"></div>
+    </main>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="../js/storage.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/admin-assignments.js"></script>
+</body>
+</html>

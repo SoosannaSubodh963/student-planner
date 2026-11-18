@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Profile · Student Task Planner</title>
+<meta name="description" content="Student Task Planner – Admin Profile">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8E%93%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+<body data-role="admin" data-page="profile" data-base="../" data-title="Admin Profile" data-sub="Account details and system settings">
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar" aria-label="Sidebar"></aside>
+  <div class="main-wrap">
+    <header class="topbar" id="topbar"></header>
+    <main class="content" id="content">
+
+      <div class="grid row-side">
+        <div class="card"><div class="profile-hero" style="flex-direction:column;text-align:center"><div id="avatarBox"></div><div><h2 id="pName"></h2><p class="muted" id="pEmail"></p><div class="flex gap-8 wrap" style="justify-content:center;margin-top:8px"><span class="chip"><i class="fa-solid fa-user-shield"></i> Administrator</span><span class="chip"><i class="fa-solid fa-at"></i> <span id="pUser"></span></span></div></div></div>
+          <div class="mini-stats" id="miniStats"></div>
+          <div class="divider"></div>
+          <div class="setting-row"><div><b>Dark mode</b><span class="muted small">Switch the console theme</span></div><label class="switch"><input type="checkbox" data-theme-switch id="swTheme"><span class="slider"></span></label></div>
+          <div class="flex mt-16"><button class="btn btn-danger btn-block" id="logoutBtn3" type="button"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</button></div></div>
+        <div>
+          <div class="card mb-20"><div class="card-header"><div class="card-title"><i class="fa-solid fa-id-card"></i> Edit profile</div></div><form id="profileForm" novalidate><div class="form-grid" id="profileFields"></div><div class="flex mt-20" style="justify-content:flex-end"><button class="btn btn-primary" type="submit"><i class="fa-solid fa-floppy-disk"></i> Save changes</button></div></form></div>
+          <div class="card mb-20"><div class="card-header"><div class="card-title"><i class="fa-solid fa-key"></i> Change password</div></div><form id="pwForm" novalidate><div class="form-grid" id="pwFields"></div><div class="flex mt-20" style="justify-content:flex-end"><button class="btn btn-primary" type="submit"><i class="fa-solid fa-lock"></i> Update password</button></div></form></div>
+          <div class="danger-zone"><h4><i class="fa-solid fa-triangle-exclamation"></i> Admin settings: reset demo data</h4><p class="muted mb-20">Erases every student, task, assignment, note and announcement and restores the original demonstration data set. This cannot be undone.</p><button class="btn btn-danger" id="resetBtn" type="button"><i class="fa-solid fa-rotate-left"></i> Reset demo data</button></div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="../js/storage.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/admin-profile.js"></script>
+</body>
+</html>

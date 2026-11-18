@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notifications · Student Task Planner</title>
+<meta name="description" content="Student Task Planner – Notifications">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8E%93%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/student.css">
+</head>
+<body data-role="student" data-page="notifications" data-base="../" data-title="Notifications" data-sub="Deadlines, announcements and study reminders">
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar" aria-label="Sidebar"></aside>
+  <div class="main-wrap">
+    <header class="topbar" id="topbar"></header>
+    <main class="content" id="content">
+
+      <div class="flex between center wrap mb-20" style="gap:12px">
+        <div class="pills" id="pills"></div>
+        <div class="flex gap-8 wrap"><button class="btn btn-secondary btn-sm" id="markAll" type="button"><i class="fa-solid fa-check-double"></i> Mark all as read</button><button class="btn btn-secondary btn-sm" id="clearAll" type="button"><i class="fa-solid fa-trash-can"></i> Delete all</button></div>
+      </div>
+      <div id="notifList"></div>
+    </main>
+  </div>
+</div>
+<script src="../js/storage.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/notifications.js"></script>
+</body>
+</html>

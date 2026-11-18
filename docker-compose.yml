@@ -1,0 +1,7 @@
+services:
+  student-planner:
+    build: .
+    container_name: student-planner
+    ports:
+      - "8080:80"
+    restart: unless-stopped
