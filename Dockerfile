@@ -1,17 +1,23 @@
-# Use unprivileged Nginx image (required for OpenShift / Kubernetes non-root security)
+# Use unprivileged Nginx image designed for OpenShift and Kubernetes
 FROM nginxinc/nginx-unprivileged:alpine
 
-# Set working directory to Nginx html folder
+# Copy custom Nginx configuration with OpenShift non-root /tmp paths
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Set working directory to standard Nginx document root
 WORKDIR /usr/share/nginx/html
 
-# Remove default files
+# Clean default html assets
 RUN rm -rf ./*
 
-# Copy static website files
+# Copy all application files into document root
 COPY . .
 
-# Expose unprivileged port 8080 (standard for OpenShift)
+# Remove configuration and repo files from public document root
+RUN rm -f nginx.conf Dockerfile docker-compose.yml README.md
+
+# Expose unprivileged port 8080 (standard OpenShift HTTP port)
 EXPOSE 8080
 
-# Start Nginx
+# Start Nginx in foreground
 CMD ["nginx", "-g", "daemon off;"]
